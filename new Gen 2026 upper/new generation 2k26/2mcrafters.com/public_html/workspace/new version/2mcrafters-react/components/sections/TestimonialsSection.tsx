@@ -5,14 +5,13 @@ import { FadeIn } from "@/components/motion/FadeIn";
 import { StaggerContainer, staggerItemVariants } from "@/components/motion/StaggerContainer";
 import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
-import Image from "next/image";
 
 const testimonials = [
   {
     name: "Sarah Martinez",
     role: "CEO, TechFlow",
     avatar: "/images/avatar1.jpg",
-    content: "L'équipe 2MCRAFTERS a transformé notre vision en réalité. Leur expertise technique et leur approche créative ont dépassé toutes nos attentes.",
+    content: "L&rsquo;équipe 2MCRAFTERS a transformé notre vision en réalité. Leur expertise technique et leur approche créative ont dépassé toutes nos attentes.",
     rating: 5,
   },
   {
@@ -34,7 +33,7 @@ const testimonials = [
 export function TestimonialsSection() {
   return (
     <section className="relative py-24">
-      <div className="absolute inset-0 bg-[url('/patterns/waves.svg')] bg-bottom bg-no-repeat opacity-10" />
+  <div className="absolute inset-0 bg-[url(/patterns/waves.svg)] bg-bottom bg-no-repeat opacity-10" />
       
       <div className="relative mx-auto max-w-7xl px-6">
         <FadeIn className="mb-16 space-y-4 text-center text-white">
@@ -65,7 +64,7 @@ export function TestimonialsSection() {
                   </div>
 
                   <p className="mb-6 text-base leading-relaxed text-zinc-700">
-                    "{testimonial.content}"
+                    &ldquo;{testimonial.content}&rdquo;
                   </p>
 
                   <div className="flex items-center gap-4">

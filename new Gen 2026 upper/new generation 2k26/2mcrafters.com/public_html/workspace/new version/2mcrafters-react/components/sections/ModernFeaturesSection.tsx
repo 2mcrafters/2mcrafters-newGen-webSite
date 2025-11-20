@@ -77,7 +77,7 @@ const features = [
 export function ModernFeaturesSection() {
   return (
     <section className="relative py-24 text-white">
-      <div className="absolute inset-0 bg-[url('/patterns/dots.svg')] opacity-30" />
+  <div className="absolute inset-0 bg-[url(/patterns/dots.svg)] opacity-30" />
       
       <div className="relative mx-auto max-w-7xl px-6">
         <FadeIn className="mb-16 space-y-4 text-center">
@@ -92,7 +92,7 @@ export function ModernFeaturesSection() {
         </FadeIn>
 
         <StaggerContainer className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature, index) => (
+          {features.map((feature) => (
             <motion.div key={feature.title} variants={staggerItemVariants}>
               <HoverCard3D intensity={10}>
                 <Card className="h-full border-white/10 bg-white/95 shadow-2xl">

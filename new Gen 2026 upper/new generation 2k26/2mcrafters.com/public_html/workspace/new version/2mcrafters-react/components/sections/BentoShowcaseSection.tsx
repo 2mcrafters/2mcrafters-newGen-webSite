@@ -7,7 +7,7 @@ import { Code2, Palette, Video, Sparkles, TrendingUp, Zap } from "lucide-react";
 export function BentoShowcaseSection() {
   return (
     <section className="relative py-24">
-      <div className="absolute inset-0 bg-[url('/patterns/mesh.svg')] bg-cover bg-center opacity-10" />
+  <div className="absolute inset-0 bg-[url(/patterns/mesh.svg)] bg-cover bg-center opacity-10" />
       
       <div className="relative mx-auto max-w-7xl px-6">
         <FadeIn className="mb-16 space-y-4 text-center text-white">
@@ -65,7 +65,7 @@ export function BentoShowcaseSection() {
               Vidéo & Motion
             </h3>
             <p className="text-base text-zinc-600">
-              Contenu vidéo professionnel pour captiver votre audience et booster l'engagement.
+              Contenu vidéo professionnel pour captiver votre audience et booster l&rsquo;engagement.
             </p>
           </BentoCard>
 
@@ -80,7 +80,7 @@ export function BentoShowcaseSection() {
                 </h3>
                 <p className="text-lg text-zinc-600">
                   Interfaces élégantes, intuitives et accessibles pensées pour vos utilisateurs.
-                  Chaque pixel compte dans l'expérience finale.
+                  Chaque pixel compte dans l&rsquo;expérience finale.
                 </p>
               </div>
               <div className="mt-6 grid grid-cols-3 gap-4">

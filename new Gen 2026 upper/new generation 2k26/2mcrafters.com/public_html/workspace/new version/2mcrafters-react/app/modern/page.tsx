@@ -16,7 +16,7 @@ export default function ModernShowcase() {
         {/* Animated backgrounds */}
         <AnimatedGradient />
         <AnimatedBlob />
-        <div className="absolute inset-0 bg-[url('/patterns/dots.svg')] opacity-20" />
+  <div className="absolute inset-0 bg-[url(/patterns/dots.svg)] opacity-20" />
         
         <div className="relative mx-auto max-w-7xl px-6">
           <FadeIn className="flex min-h-[80vh] flex-col items-center justify-center text-center">
@@ -26,7 +26,7 @@ export default function ModernShowcase() {
             </div>
 
             <h1 className="mb-6 max-w-5xl text-5xl font-bold leading-tight text-white sm:text-6xl lg:text-7xl">
-              L'agence digitale qui{" "}
+              L&rsquo;agence digitale qui{" "}
               <span className="bg-linear-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
                 transforme vos idées
               </span>{" "}
@@ -34,7 +34,7 @@ export default function ModernShowcase() {
             </h1>
 
             <p className="mb-10 max-w-3xl text-xl text-slate-300 sm:text-2xl">
-              Design premium, développement d'excellence et accompagnement sur-mesure 
+              Design premium, développement d&rsquo;excellence et accompagnement sur-mesure 
               pour faire décoller votre présence digitale
             </p>
 

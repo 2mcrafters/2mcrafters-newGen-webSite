@@ -14,13 +14,13 @@ const secondaryBadges = ["Parallaxe", "Lenis", "RAF loop", "Ancres", "Vélocité
 
 export function SmoothShowcase() {
   return (
-  <section id="fluid-motion" className="relative py-24 text-white">
+    <section id="fluid-motion" className="relative bg-slate-50/60 py-24 text-slate-900 backdrop-blur">
       <div className="mx-auto flex max-w-6xl flex-col gap-16 px-6 lg:flex-row">
         <div className="flex-1 space-y-8">
           <FadeInOnScroll className="space-y-4">
-            <p className="tagline text-slate-400">Mouvements fluides</p>
+            <p className="tagline text-slate-500">Mouvements fluides</p>
             <h2 className="text-3xl font-semibold sm:text-4xl">Un scroll haute fréquence, parfaitement synchronisé.</h2>
-            <p className="text-lg text-slate-300">
+            <p className="text-lg text-slate-600">
               Notre provider Lenis expose `useLenis` et `useLenisScroll` pour déclencher parallaxes, reveals et effets
               de vélocité. Compatible ScrollTrigger, Framer Motion ou GSAP dès maintenant.
             </p>
@@ -30,13 +30,13 @@ export function SmoothShowcase() {
             {tuningOptions.map((item, index) => (
               <VelocityCard
                 key={item.label}
-                className="rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur"
+                className="rounded-3xl border border-slate-200/60 bg-white/70 p-5 shadow-sm backdrop-blur"
                 lift={7 + index * 1.5}
                 intensity={0.04 + index * 0.006}
               >
-                <p className="text-xs uppercase tracking-[0.4em] text-slate-400">{item.label}</p>
-                <p className="mt-3 text-3xl font-semibold">{item.value}</p>
-                <p className="mt-1 text-sm text-slate-300">{item.detail}</p>
+                <p className="text-xs uppercase tracking-[0.4em] text-slate-500">{item.label}</p>
+                <p className="mt-3 text-3xl font-semibold text-slate-900">{item.value}</p>
+                <p className="mt-1 text-sm text-slate-600">{item.detail}</p>
               </VelocityCard>
             ))}
           </div>
@@ -46,19 +46,19 @@ export function SmoothShowcase() {
         <div className="flex-1">
           <ParallaxWrapper
             strength={0.18}
-            className="rounded-4xl border border-white/10 bg-linear-to-b from-white/5 to-white/0 p-8 shadow-2xl shadow-cyan-500/20"
+            className="rounded-4xl border border-slate-200 bg-linear-to-b from-slate-50 to-white p-8 shadow-xl shadow-slate-900/10"
           >
             <FadeInOnScroll delay={200} className="space-y-6">
-              <p className="text-xs uppercase tracking-[0.4em] text-slate-400">Preset premium</p>
+              <p className="text-xs uppercase tracking-[0.4em] text-slate-500">Preset premium</p>
               <div className="space-y-2">
                 <p className="text-4xl font-semibold">useLenis</p>
-                <p className="text-sm text-slate-300">Récupère scrollY, vitesse, progression et direction.</p>
+                <p className="text-sm text-slate-600">Récupère scrollY, vitesse, progression et direction.</p>
               </div>
               <div className="space-y-2">
                 <p className="text-4xl font-semibold">useLenisScroll</p>
-                <p className="text-sm text-slate-300">Abonnement ultra léger, parfait pour animations sur-mesure.</p>
+                <p className="text-sm text-slate-600">Abonnement ultra léger, parfait pour animations sur-mesure.</p>
               </div>
-              <div className="rounded-3xl border border-white/10 bg-black/40 p-6 text-sm text-slate-200">
+              <div className="rounded-3xl border border-slate-200/60 bg-white/70 p-6 text-sm text-slate-700 backdrop-blur">
                 <ul className="space-y-2">
                   <li>• Offset d’ancre configurable pour les nav collantes</li>
                   <li>• Boucle RAF partagée (auto ou manuel)</li>
@@ -72,7 +72,7 @@ export function SmoothShowcase() {
             {secondaryBadges.map((badge) => (
               <span
                 key={badge}
-                className="rounded-full border border-white/20 px-4 py-1 text-xs uppercase tracking-[0.4em] text-slate-300"
+                className="rounded-full border border-slate-300/70 bg-white/70 px-4 py-1 text-xs uppercase tracking-[0.4em] text-slate-600 backdrop-blur"
               >
                 {badge}
               </span>

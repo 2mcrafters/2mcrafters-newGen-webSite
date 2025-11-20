@@ -40,7 +40,7 @@ const stats = [
 export function ModernStatsSection() {
   return (
     <section className="relative py-24">
-      <div className="absolute inset-0 bg-[url('/patterns/mesh.svg')] bg-cover bg-center opacity-20" />
+  <div className="absolute inset-0 bg-[url(/patterns/mesh.svg)] bg-cover bg-center opacity-20" />
       
       <div className="relative mx-auto max-w-7xl px-6">
         <FadeIn className="mb-16 space-y-4 text-center text-white">
@@ -54,7 +54,7 @@ export function ModernStatsSection() {
         </FadeIn>
 
         <StaggerContainer className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {stats.map((stat, index) => (
+          {stats.map((stat) => (
             <motion.div
               key={stat.label}
               variants={staggerItemVariants}

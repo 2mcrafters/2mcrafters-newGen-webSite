@@ -43,7 +43,7 @@ export function ModernContactSection() {
 
   return (
     <section id="contact" className="relative py-24">
-      <div className="absolute inset-0 bg-[url('/patterns/dots.svg')] opacity-20" />
+  <div className="absolute inset-0 bg-[url(/patterns/dots.svg)] opacity-20" />
       
       <div className="relative mx-auto max-w-7xl px-6">
         <FadeIn className="mb-16 space-y-4 text-center text-white">
@@ -52,7 +52,7 @@ export function ModernContactSection() {
             Lançons votre projet ensemble
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-slate-300">
-            Une idée, un projet, une question ? Parlons-en autour d'un café (virtuel ou non)
+            Une idée, un projet, une question ? Parlons-en autour d&rsquo;un café (virtuel ou non)
           </p>
         </FadeIn>
 
