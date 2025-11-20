@@ -27,7 +27,8 @@ const adobeFiles = [
 ];
 
 export default function ExpertiseTickerSection01() {
-  const infiniteFiles = [...adobeFiles, ...adobeFiles];
+  // Quadruple the list to ensure seamless looping on large screens
+  const infiniteFiles = [...adobeFiles, ...adobeFiles, ...adobeFiles, ...adobeFiles];
 
   return (
     <section aria-label="Expertises Crafters – Logos" className="relative text-white py-12">
@@ -45,18 +46,18 @@ export default function ExpertiseTickerSection01() {
             <div className="pointer-events-none absolute inset-y-0 right-0 w-40 bg-linear-to-l from-[#010b1e] via-[#010b1e]/70 to-transparent z-10" />
 
             <div 
-              className="animate-marquee flex items-center gap-18 whitespace-nowrap px-6 py-5"
-              style={{ animationDuration: '40s' }}
+              className="animate-marquee flex items-center gap-12 whitespace-nowrap px-6 py-5"
+              style={{ animationDuration: '15s' }}
             >
               {infiniteFiles.map((file, index) => (
                 <div key={`${file}-${index}`} className="flex items-center justify-center shrink-0">
                   <Image
                     src={`/images/adobe/${file}`}
                     alt={`Adobe ${index + 1}`}
-                    width={120}
-                    height={90}
-                    className="block h-[50px] w-auto object-contain"
-                    priority={index < 4}
+                    width={160}
+                    height={120}
+                    className="block h-[50px] w-auto object-contain mix-blend-screen"
+                    priority={index < 8}
                   />
                 </div>
               ))}
