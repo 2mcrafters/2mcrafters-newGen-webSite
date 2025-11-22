@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { aboutValues } from "@/lib/data";
 import { FadeInOnScroll } from "@/components/motion/FadeInOnScroll";
 import { NewsletterSection } from "@/components/sections/NewsletterSection";
+import { AboutHeroSlider } from "@/components/sections/AboutHeroSlider";
+import { ExpertiseTickerSection } from "@/components/sections/ExpertiseTickerSection";
 
 export const metadata: Metadata = {
   title: "À propos de 2MCRAFTERS | Studio digital & créatif",
@@ -11,13 +14,23 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="space-y-16">
-      <section className="bg-white py-24 text-zinc-900">
-        <div className="mx-auto max-w-5xl space-y-6 px-6">
-          <FadeInOnScroll className="space-y-4">
-            <p className="tagline text-slate-500">À propos</p>
-            <h1 className="text-4xl font-semibold">À propos de 2MCRAFTERS.</h1>
-            <p className="text-lg text-slate-600">
+    <div className="space-y-24 pb-0">
+      {/* Hero Slider Section */}
+      <section className="px-4 pt-32 md:px-8">
+        <div className="mx-auto max-w-[1600px]">
+          <AboutHeroSlider />
+        </div>
+      </section>
+
+      {/* Intro Text */}
+      <section className="px-4 md:px-8">
+        <div className="mx-auto max-w-4xl text-center">
+          <FadeInOnScroll className="space-y-6">
+            <span className="text-sm font-semibold uppercase tracking-wider text-blue-400">Notre Identité</span>
+            <h2 className="text-3xl font-bold text-white md:text-5xl leading-tight">
+              Plus qu'un studio, <br/> <span className="text-slate-400">un partenaire de croissance.</span>
+            </h2>
+            <p className="text-lg text-slate-300 leading-relaxed">
               2MCRAFTERS est un studio digital-tech & créatif basé à Tanger, au Maroc. Nous réunissons développeurs,
               designers, vidéastes et stratèges pour accompagner les entreprises dans leurs projets de transformation
               digitale, de branding et d’innovation.
@@ -26,71 +39,86 @@ export default function AboutPage() {
         </div>
       </section>
 
-  <section className="bg-linear-to-b from-[#00315f] to-[#001428] py-20 text-white">
-        <div className="mx-auto max-w-6xl space-y-10 px-6">
-          <FadeInOnScroll className="space-y-3">
-            <p className="tagline text-slate-400">Notre vision</p>
-            <h2 className="text-3xl font-semibold">Notre vision</h2>
-            <p className="text-lg text-slate-300">
-              Nous croyons que le digital est un levier au service de l’humain et du métier. Notre ambition : créer des
-              solutions utiles, belles et durables qui simplifient le quotidien de nos clients et renforcent leur impact.
-            </p>
-          </FadeInOnScroll>
+      {/* Ticker Section */}
+      <ExpertiseTickerSection />
 
-          <FadeInOnScroll className="space-y-3">
-            <p className="tagline text-slate-400">Notre mission</p>
-            <h2 className="text-3xl font-semibold">Notre mission</h2>
-            <p className="text-lg text-slate-300">
-              Transformer vos idées en expériences digitales concrètes : clarifier vos besoins, concevoir des solutions
-              sur mesure, allier esthétique, performance et simplicité d’utilisation, puis vous accompagner dans la
-              durée.
-            </p>
-          </FadeInOnScroll>
+      {/* Vision & Mission */}
+      <section className="px-4 md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-24">
+            <FadeInOnScroll className="space-y-6">
+              <h3 className="text-3xl font-bold text-white">Notre Vision</h3>
+              <p className="text-lg text-slate-400 leading-relaxed">
+                Nous croyons que le digital est un levier au service de l’humain et du métier. Notre ambition : créer des
+                solutions utiles, belles et durables qui simplifient le quotidien de nos clients et renforcent leur impact.
+              </p>
+              <div className="h-1 w-24 bg-blue-500/30 rounded-full"></div>
+            </FadeInOnScroll>
+            
+            <FadeInOnScroll delay={200} className="space-y-6">
+              <h3 className="text-3xl font-bold text-white">Notre Mission</h3>
+              <p className="text-lg text-slate-400 leading-relaxed">
+                Transformer vos idées en expériences digitales concrètes : clarifier vos besoins, concevoir des solutions
+                sur mesure, allier esthétique, performance et simplicité d’utilisation, puis vous accompagner dans la
+                durée.
+              </p>
+              <div className="h-1 w-24 bg-purple-500/30 rounded-full"></div>
+            </FadeInOnScroll>
+          </div>
+        </div>
+      </section>
 
-          <div className="grid gap-6 md:grid-cols-2">
-            {aboutValues.map((value) => (
-              <FadeInOnScroll key={value.title} className="rounded-3xl border border-white/15 bg-white/5 p-6">
-                <h3 className="text-xl font-semibold">{value.title}</h3>
-                <p className="mt-2 text-sm text-slate-200">{value.detail}</p>
+      {/* Values Grid */}
+      <section className="px-4 md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <FadeInOnScroll className="mb-12 text-center">
+            <h2 className="text-3xl font-bold text-white">Nos Valeurs</h2>
+          </FadeInOnScroll>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {aboutValues.map((value, index) => (
+              <FadeInOnScroll 
+                key={value.title} 
+                delay={index * 100}
+                className="group rounded-3xl border border-white/10 bg-white/5 p-8 transition-all hover:bg-white/10 hover:border-blue-400/30"
+              >
+                <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">{value.title}</h3>
+                <p className="mt-4 text-slate-400 leading-relaxed">{value.detail}</p>
               </FadeInOnScroll>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-20 text-zinc-900">
-        <div className="mx-auto max-w-6xl space-y-8 px-6">
-          <FadeInOnScroll className="space-y-3">
-            <p className="tagline text-slate-500">Notre équipe</p>
-            <h2 className="text-3xl font-semibold">Une équipe pluridisciplinaire.</h2>
-            <p className="text-lg text-slate-600">
-              Développeurs full-stack, designers UI/UX, graphistes, vidéastes et spécialistes du contenu travaillent côte
-              à côte. Ensemble, nous couvrons toute la chaîne d’un projet digital, du concept à la mise en production.
-            </p>
+      {/* Gallery / Pics Section */}
+      <section className="px-4 md:px-8 py-12">
+        <div className="mx-auto max-w-[1600px]">
+          <FadeInOnScroll className="mb-12 text-center">
+            <span className="text-sm font-semibold uppercase tracking-wider text-blue-400">Life at 2MCRAFTERS</span>
+            <h2 className="mt-2 text-3xl font-bold text-white">Dans les coulisses</h2>
           </FadeInOnScroll>
-          <div className="grid gap-6 md:grid-cols-2">
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              {
-                title: "Culture produit",
-                detail: "Chaque squad pense usage, priorise la valeur et optimise l’expérience utilisateur.",
-              },
-              {
-                title: "Méthodo",
-                detail: "Workshops, prototypage rapide, suivi transparent sur Linear/Notion et rapports vidéo Loom.",
-              },
-              {
-                title: "Tech",
-                detail: "Stack moderne : Next.js, React Native, Laravel, Node.js, Tailwind, Supabase, CI/CD.",
-              },
-              {
-                title: "Accompagnement",
-                detail: "Coaching des équipes internes, transfert de compétences et documentation détaillée.",
-              },
-            ].map((item) => (
-              <div key={item.title} className="rounded-3xl border border-black/5 bg-slate-50 p-6">
-                <h3 className="text-lg font-semibold">{item.title}</h3>
-                <p className="mt-2 text-sm text-slate-600">{item.detail}</p>
-              </div>
+              "/images/posts/12.jpg",
+              "/images/posts/13.jpg",
+              "/images/posts/14.jpg",
+              "/images/posts/16.jpg",
+              "/images/posts/17.jpg",
+              "/images/posts/18.jpg"
+            ].map((src, index) => (
+              <FadeInOnScroll key={index} delay={index * 100} className="relative aspect-[4/5] overflow-hidden rounded-3xl group border border-white/10 bg-white/5">
+                <Image 
+                  src={src} 
+                  alt={`Life at 2MCRAFTERS ${index + 1}`} 
+                  fill 
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#001428]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                  <span className="text-white font-medium translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    Moment {index + 1}
+                  </span>
+                </div>
+              </FadeInOnScroll>
             ))}
           </div>
         </div>

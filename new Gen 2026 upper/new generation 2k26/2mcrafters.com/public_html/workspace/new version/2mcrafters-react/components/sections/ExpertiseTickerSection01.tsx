@@ -31,19 +31,22 @@ export default function ExpertiseTickerSection01() {
   const infiniteFiles = [...adobeFiles, ...adobeFiles, ...adobeFiles, ...adobeFiles];
 
   return (
-    <section aria-label="Expertises Crafters – Logos" className="relative text-white py-12">
+    <section aria-label="Expertises Crafters – Logos" className="relative w-full overflow-hidden py-5 text-white">
+      {/* Decorative background glow */}
+     
+
       <FadeInOnScroll className="block w-full">
         <div className="flex flex-col gap-0">
-          <div className="relative w-full overflow-hidden border border-white/10 bg-[#010b1e]/95 backdrop-blur-lg shadow-[0_25px_90px_rgba(1,13,34,0.7)]">
+          <div className="relative w-full overflow-hidden border border-white/10 bg-slate-950/50 backdrop-blur-lg shadow-[0_25px_90px_rgba(1,13,34,0.7)]">
             
             <span className="pointer-events-none absolute left-0 right-0 top-0 h-[1px] bg-white/20" />
             <span className="pointer-events-none absolute bottom-0 left-0 right-0 h-[1px] bg-white/20" />
 
             {/* Left Gradient */}
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-40 bg-linear-to-r from-[#010b1e] via-[#010b1e]/70 to-transparent z-10" />
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-slate-950 via-slate-950/70 to-transparent z-10" />
 
             {/* Right Gradient */}
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-40 bg-linear-to-l from-[#010b1e] via-[#010b1e]/70 to-transparent z-10" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-slate-950 via-slate-950/70 to-transparent z-10" />
 
             <div 
               className="animate-marquee flex items-center gap-12 whitespace-nowrap px-6 py-5"
@@ -56,7 +59,7 @@ export default function ExpertiseTickerSection01() {
                     alt={`Adobe ${index + 1}`}
                     width={160}
                     height={120}
-                    className="block h-[50px] w-auto object-contain mix-blend-screen"
+                    className="block h-[50px] w-auto object-contain"
                     priority={index < 8}
                   />
                 </div>

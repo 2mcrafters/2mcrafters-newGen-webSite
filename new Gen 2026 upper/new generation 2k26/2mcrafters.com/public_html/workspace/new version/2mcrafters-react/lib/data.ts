@@ -114,28 +114,28 @@ export const clients = [
 
 export const caseStudies = [
   {
-    title: "Cabinet Lexis",
-    category: "Site vitrine • Branding • SEO",
+    title: 'Développement Web',
+    category: 'Site web • Performance • Optimisation',
     description:
-      "Refonte complète du site et de l’identité visuelle pour un cabinet d’avocats basé à Tanger. Résultat : image plus professionnelle et demandes entrantes en hausse.",
-    image: "/images/posts/services/portfolio-avocats.jpg",
-    stats: ["+45% leads", "Charte FR/EN", "SEO local"],
+      'Développement de plateformes web modernes et rapides avec une architecture solide, un code optimisé et une expérience utilisateur fluide.',
+    image: '/images/pics/03.jpeg',
+    stats: ['+2x rapidité', 'Sécurité renforcée', 'Code optimisé'],
   },
   {
-    title: "Industria ERP",
-    category: "SaaS • ERP métier • Dashboard",
+    title: 'Identité Visuelle',
+    category: 'Branding • Design graphique • Création',
     description:
-      "Plateforme de gestion pour une entreprise industrielle : suivi dossiers, équipes et automatisations temps réel.",
-    image: "/images/posts/services/portfolio-industrie.jpg",
-    stats: ["-30% erreurs", "Temps réel", "KPIs partagés"],
+      'Conception complète d’identités visuelles : logos, chartes graphiques et univers de marque pour un rendu professionnel et mémorable.',
+    image: '/images/pics/05.webp',
+    stats: ['Créativité premium', 'Identité cohérente', 'Impact visuel'],
   },
   {
-    title: "Smart RH",
-    category: "SIRH • Présence & paie • Digitalisation",
+    title: 'Production Vidéo',
+    category: 'Vidéo • Tournage • Storytelling',
     description:
-      "Solution complète de digitalisation RH : présence, congés, paie, contrats et documents centralisés.",
-    image: "/images/posts/services/portfolio-rh.jpg",
-    stats: ["Gain de temps x3", "Portail employés", "Reporting live"],
+      'Production vidéo professionnelle : captation, réalisation et montage pour mettre en valeur vos projets, produits ou événements.',
+    image: '/images/pics/011.jpg',
+    stats: ['Qualité 4K', 'Ambiance maîtrisée', 'Storytelling fort'],
   },
 ];
 
@@ -265,25 +265,53 @@ export const aboutValues = [
     title: "Esprit de collaboration",
     detail: "Nous construisons vos projets avec vous, pas à votre place.",
   },
+  {
+    title: "Innovation continue",
+    detail: "Veille technologique constante pour vous proposer les solutions de demain.",
+  },
+  {
+    title: "Engagement durable",
+    detail: "Des solutions pensées pour durer et évoluer avec votre croissance.",
+  },
 ];
 
 export const blogPosts = [
   {
-    title: "Comment préparer le cahier des charges de votre site web ?",
+    title: "L'avenir du Design System en 2026",
     summary:
-      "Un guide simple pour clarifier vos besoins avant de lancer un projet digital et aligner toutes les parties prenantes.",
+      "Comment l'IA et l'automatisation transforment la création et la maintenance des systèmes de design à grande échelle.",
+    category: "Design",
+    date: "22 Nov 2025"
   },
   {
-    title: "5 erreurs fréquentes lors d’une refonte de site",
-    summary: "À éviter pour ne pas perdre en visibilité, en SEO et en performance.",
+    title: "Next.js 15 & React Server Components",
+    summary: "Retour d'expérience sur la migration de grosses applications : gains de performance et pièges à éviter.",
+    category: "Tech",
+    date: "15 Nov 2025"
   },
   {
-    title: "Pourquoi la digitalisation RH est devenue une priorité ?",
-    summary: "Les enjeux pour les entreprises et les bénéfices concrets d’un SIRH.",
+    title: "UX Writing : La voix de votre produit",
+    summary: "Pourquoi les mots comptent autant que les pixels pour l'expérience utilisateur et la conversion.",
+    category: "UX/UI",
+    date: "10 Nov 2025"
+  },
+  {
+    title: "Green IT : Concevoir des sites éco-responsables",
+    summary: "Les bonnes pratiques de développement et de design pour réduire l'empreinte carbone de vos projets web.",
+    category: "RSE",
+    date: "05 Nov 2025"
   },
   {
     title: "L’importance du branding dans un univers digital saturé",
-    summary: "Comment se démarquer avec une identité claire et cohérente.",
+    summary: "Comment se démarquer avec une identité claire et cohérente face à une concurrence accrue.",
+    category: "Branding",
+    date: "28 Oct 2025"
+  },
+  {
+    title: "Pourquoi la digitalisation RH est devenue une priorité ?",
+    summary: "Les enjeux pour les entreprises et les bénéfices concrets d’un SIRH moderne et intuitif.",
+    category: "Business",
+    date: "20 Oct 2025"
   },
 ];
 
@@ -291,27 +319,32 @@ export const faqs = [
   {
     question: "Combien de temps dure un projet de site web ?",
     answer:
-      "Entre 3 et 6 semaines pour un site vitrine classique, du cadrage à la mise en ligne, selon la complexité et la réactivité sur les contenus.",
+      "Entre 4 et 8 semaines pour un site vitrine premium, et de 3 à 6 mois pour une plateforme complexe ou un SaaS, incluant les phases de design, développement et recette.",
   },
   {
-    question: "Travaillez-vous uniquement avec des clients au Maroc ?",
+    question: "Proposez-vous de la maintenance après la mise en ligne ?",
     answer:
-      "Non. Nous opérons depuis Tanger mais accompagnons aussi des clients à l’international grâce à des outils de collaboration en ligne.",
+      "Oui, nous proposons des contrats de maintenance (TMA) pour assurer la sécurité, les mises à jour techniques et les évolutions fonctionnelles de votre projet sur le long terme.",
   },
   {
-    question: "Proposez-vous des contrats de maintenance ?",
+    question: "Travaillez-vous avec des startups ou des grands groupes ?",
     answer:
-      "Oui, pour la maintenance technique, la sécurité, les sauvegardes et même l’actualisation des contenus si besoin.",
+      "Les deux. Nous adaptons nos méthodologies (Agile, Scrum) à la taille de la structure. Nous aimons l'agilité des startups et la rigueur des grands comptes.",
   },
   {
-    question: "Pouvez-vous intervenir sur un site déjà existant ?",
+    question: "Quelle est votre stack technique de prédilection ?",
     answer:
-      "Nous pouvons auditer un site existant, proposer une amélioration progressive ou prendre en charge une refonte complète.",
+      "Nous sommes experts sur l'écosystème React : Next.js pour le web, React Native pour le mobile, couplé à TypeScript et Tailwind CSS pour un code robuste et maintenable.",
   },
   {
-    question: "Comment se passe le paiement ?",
+    question: "Comment gérez-vous le SEO de vos sites ?",
     answer:
-      "Un acompte est demandé au démarrage puis des paiements échelonnés en fonction des jalons du projet.",
+      "Le SEO est intégré dès la conception (Structure sémantique, Performance Core Web Vitals, Accessibilité). Nous livrons des sites techniquement optimisés pour Google.",
+  },
+  {
+    question: "Puis-je modifier le contenu de mon site moi-même ?",
+    answer:
+      "Absolument. Nous intégrons des CMS Headless (comme Sanity, Strapi ou WordPress Headless) pour vous donner une autonomie totale sur vos textes et images.",
   },
 ];
 

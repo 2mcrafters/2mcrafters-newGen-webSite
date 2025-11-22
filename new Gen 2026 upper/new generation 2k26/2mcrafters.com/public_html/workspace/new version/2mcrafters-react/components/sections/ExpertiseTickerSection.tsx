@@ -16,8 +16,8 @@ const expertiseWords = [
   "Performance Produit", "Cloud Native", "CI / CD", "Architecture Frontend",
 ];
 
-// Triple loop for smooth infinite scrolling
-const infiniteWords = [...expertiseWords, ...expertiseWords, ...expertiseWords];
+// Double loop for smooth infinite scrolling
+const infiniteWords = [...expertiseWords, ...expertiseWords];
 
 export function ExpertiseTickerSection() {
   return (
@@ -32,13 +32,16 @@ export function ExpertiseTickerSection() {
             <span className="pointer-events-none absolute bottom-0 left-0 right-0 h-[1px] bg-white/20" />
 
             {/* Left Gradient */}
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-40 bg-linear-to-r from-[#010b1e] via-[#010b1e]/70 to-transparent" />
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-[#010b1e] via-[#010b1e]/70 to-transparent z-10" />
 
             {/* Right Gradient */}
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-40 bg-linear-to-l from-[#010b1e] via-[#010b1e]/70 to-transparent" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-[#010b1e] via-[#010b1e]/70 to-transparent z-10" />
 
             {/* Smooth Infinite Loop */}
-            <div className="expertise-marquee flex items-center gap-12 whitespace-nowrap px-12 py-8 tracking-[0.32em] text-white/90 uppercase font-semibold text-base sm:text-lg sm:gap-16 sm:px-16">
+            <div 
+              className="animate-marquee flex w-max items-center gap-12 whitespace-nowrap px-12 py-4 tracking-[0.32em] text-white/90 uppercase font-semibold text-base sm:text-lg sm:gap-16 sm:px-16"
+              style={{ animationDuration: '100s' }}
+            >
 
               {infiniteWords.map((word, i) => (
                 <span key={`${word}-${i}`} className="text-white/80 hover:text-white transition-colors duration-300">

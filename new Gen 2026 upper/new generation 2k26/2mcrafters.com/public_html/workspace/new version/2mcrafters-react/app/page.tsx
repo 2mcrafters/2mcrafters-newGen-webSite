@@ -14,10 +14,11 @@ export default function Home() {
     <>
       <HeroSection />
       <AlliesSection />
-      <ExpertiseTickerSection01 />
+
       <ServicesSection />
       <ExpertiseTickerSection />
       <CreativeStackSection />
+      <ExpertiseTickerSection01 />
       <CaseStudiesSection />
       <ScrollMotionLabSection />
       <NewsletterSection />

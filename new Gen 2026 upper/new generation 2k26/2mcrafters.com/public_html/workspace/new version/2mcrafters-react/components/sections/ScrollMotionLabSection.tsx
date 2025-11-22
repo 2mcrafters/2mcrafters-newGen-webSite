@@ -7,65 +7,69 @@ import { FadeInOnScroll } from '@/components/motion/FadeInOnScroll';
 
 const horizontalScenes = [
   {
-    title: 'Immersion',
-    detail: 'Études terrain, moodboards vivants et captations pour nourrir chaque concept.',
+    title: 'Premier dictionnaire collaboratif du coaching',
+    detail: 'Une plateforme innovante pour explorer les concepts essentiels du coaching, partager vos définitions et contribuer à une communauté active de coachs et formateurs.',
     image: '/images/posts/services/1.jpg',
-    badge: 'Terrain',
+    badge: 'Dicoaching',
   },
   {
-    title: 'Prototypage',
-    detail: 'Design system variables + interactions Lenis testées en live avec vos équipes.',
+    title: 'La solution moderne pour gérer vos ressources humaines',
+    detail: 'Smart RH centralise le suivi du personnel, les congés, les projets et la communication interne pour une gestion RH simple, fluide et automatisée.',
     image: '/images/posts/services/2.jpg',
-    badge: 'System',
+    badge: 'Smart RH',
   },
   {
-    title: 'Motion Lab',
-    detail:
-      'WebGL, WebGPU et ScrollTrigger orchestrent des reveals zoom-in et des slides horizontales.',
+    title: 'Votre gestion commerciale en un seul outil',
+    detail: 'Pilotez vos produits, employés, commandes et alertes depuis une interface unique conçue pour optimiser tout votre flux commercial.',
     image: '/images/posts/services/3.jpg',
-    badge: 'Immersive',
+    badge: 'Boukir',
   },
   {
-    title: 'Déploiement',
-    detail: 'CI/CD, pilotage qualité et contenu multi-formats prêts à diffuser.',
+    title: 'Explorez votre essence, révélez votre potentiel',
+    detail: 'Plongez dans le système de l’Ennéagramme pour mieux vous connaître, comprendre vos automatismes et engager votre transformation intérieure.',
     image: '/images/posts/services/4.jpg',
-    badge: 'Opérations',
+    badge: 'Enneamaroc',
   },
   {
-    title: 'Labo sonore',
-    detail: 'Textures audio et spatialisation subtiles qui accompagnent les transitions.',
+    title: 'Maîtrisez une langue, ouvrez un monde',
+    detail: 'Alingua Academy vous accompagne avec des cours adaptés, des professeurs qualifiés et une préparation efficace aux certifications internationales.',
     image: '/images/posts/services/5.jpg',
-    badge: 'Sound',
+    badge: 'Alingua',
   },
   {
-    title: 'Expérience',
-    detail: 'Interactions tactiles, micro-animations et scénarios responsives en pilote continu.',
+    title: 'Donnez vie à vos projets imprimés',
+    detail: 'De vos supports marketing à vos créations personnalisées, Damej Print transforme vos idées en réalisations visibles, durables et de haute qualité.',
     image: '/images/posts/services/6.jpg',
-    badge: 'Experience',
+    badge: 'Damej Print',
   },
   {
-    title: 'Story Craft',
-    detail: 'Narrations dynamisées avec micro-interactions et aliasing typographique.',
+    title: 'L’aventure commence sur deux-roues',
+    detail: 'Découvrez une solution complète pour louer ou acheter une moto, avec assistance, entretien et pièces fiables pour rouler en toute confiance.',
     image: '/images/posts/services/7.jpg',
-    badge: 'Story',
+    badge: 'Yaala 2 Roues',
   },
   {
-    title: 'Lighting Lab',
-    detail: 'Dégradés organiques et halos lumineux qui élèvent la piste horizontale.',
+    title: 'Nos collaborations, votre confiance',
+    detail: 'Découvrez quelques-unes des marques et institutions qui font confiance à Crafters pour leurs solutions digitales, créatives et technologiques.',
     image: '/images/posts/services/8.jpg',
-    badge: 'Light',
+    badge: 'Crafters',
   },
 ];
 
 export function ScrollMotionLabSection() {
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [isInstant, setIsInstant] = useState(false);
   const dragState = useRef({ isDragging: false, startX: 0, currentOffset: 0, slideWidth: 0, gap: 0 });
   const autoplayRef = useRef<NodeJS.Timeout | null>(null);
   const trackRef = useRef<HTMLDivElement | null>(null);
   const slideCount = horizontalScenes.length;
-  const extendedScenes = slideCount > 0 ? [...horizontalScenes, horizontalScenes[0]] : [];
+  // Add clones at both ends for seamless bidirectional looping
+  const extendedScenes = slideCount > 0 
+    ? [horizontalScenes[slideCount - 1], ...horizontalScenes, horizontalScenes[0]] 
+    : [];
+
+  // Start at index 1 (the first real slide)
+  const [currentIndex, setCurrentIndex] = useState(1);
 
   useEffect(() => {
     if (isPaused || slideCount === 0) {
@@ -74,11 +78,7 @@ export function ScrollMotionLabSection() {
     }
 
     autoplayRef.current = setInterval(() => {
-      setCurrentIndex((prev) => {
-        if (slideCount === 0) return prev;
-        const next = prev + 1;
-        return next > slideCount ? slideCount : next;
-      });
+      setCurrentIndex((prev) => prev + 1);
     }, 4500);
 
     return () => {
@@ -100,24 +100,36 @@ export function ScrollMotionLabSection() {
       track.style.transform = `translateX(-${offset}px)`;
 
       if (isInstant) {
+        // Force reflow to ensure the jump happens instantly before re-enabling transition
+        track.getBoundingClientRect();
         requestAnimationFrame(() => {
-          track.style.transition = 'transform 0.7s ease-out';
           setIsInstant(false);
         });
       }
     }
   }, [currentIndex, isInstant]);
 
+  // Handle seamless loop resets
   useEffect(() => {
-    if (currentIndex === slideCount && slideCount > 0) {
+    if (slideCount === 0) return;
+
+    // If we reached the clone of the first slide (at the end)
+    if (currentIndex === slideCount + 1) {
       const timeout = setTimeout(() => {
         setIsInstant(true);
-        setCurrentIndex(0);
+        setCurrentIndex(1); // Jump back to the real first slide
       }, 720);
-
       return () => clearTimeout(timeout);
     }
-    return undefined;
+
+    // If we reached the clone of the last slide (at the beginning)
+    if (currentIndex === 0) {
+      const timeout = setTimeout(() => {
+        setIsInstant(true);
+        setCurrentIndex(slideCount); // Jump back to the real last slide
+      }, 720);
+      return () => clearTimeout(timeout);
+    }
   }, [currentIndex, slideCount]);
 
   const handleMouse = (pause: boolean) => () => setIsPaused(pause);
@@ -167,19 +179,13 @@ export function ScrollMotionLabSection() {
     const threshold = dragState.current.slideWidth / 4;
     if (slideCount > 0) {
       if (delta > threshold) {
-        setCurrentIndex((prev) => {
-          const next = prev + 1;
-          return next > slideCount ? slideCount : next;
-        });
+        // Dragged left -> Next slide
+        setCurrentIndex((prev) => prev + 1);
       } else if (delta < -threshold) {
-        setCurrentIndex((prev) => {
-          if (prev === 0) {
-            setIsInstant(true);
-            return slideCount - 1;
-          }
-          return prev - 1;
-        });
+        // Dragged right -> Previous slide
+        setCurrentIndex((prev) => prev - 1);
       } else {
+        // Snap back
         const offset = computeOffset(currentIndex);
         trackRef.current.style.transform = `translateX(-${offset}px)`;
       }
@@ -236,6 +242,20 @@ export function ScrollMotionLabSection() {
     return () => resetDrag();
   }, [currentIndex]);
 
+  const handleNext = () => {
+    setIsPaused(true);
+    setCurrentIndex((prev) => prev + 1);
+    // Resume autoplay after interaction
+    setTimeout(() => setIsPaused(false), 5000);
+  };
+
+  const handlePrev = () => {
+    setIsPaused(true);
+    setCurrentIndex((prev) => prev - 1);
+    // Resume autoplay after interaction
+    setTimeout(() => setIsPaused(false), 5000);
+  };
+
   return (
     <section
       id="scroll-lab"
@@ -245,13 +265,12 @@ export function ScrollMotionLabSection() {
       {slideCount === 0 && <div className="px-6 text-center text-sm text-slate-300">Aucune scène définie.</div>}
       <div className="mx-auto max-w-6xl space-y-6 px-6">
         <FadeInOnScroll className="space-y-4">
-          <p className="tagline text-slate-400">Atelier scroll & motion</p>
+          <p className="tagline text-slate-400">Nos Réalisations</p>
           <h2 className="text-3xl font-semibold sm:text-4xl">
-            Vertical, horizontal, zoom : un scroll signature.
+            Ils nous font confiance, nous façonnons leurs solutions digitales.
           </h2>
           <p className="text-lg text-slate-300">
-            Lenis orchestre chaque interaction : storytelling sticky, galeries horizontales, zooms
-            et tremplins pour ScrollTrigger.
+            Crafters accompagne des marques et organisations ambitieuses en créant des plateformes modernes, des identités visuelles fortes et des outils métiers performants. Voici un aperçu de ce que nous construisons chaque jour avec nos clients.
           </p>
         </FadeInOnScroll>
       </div>
@@ -273,53 +292,79 @@ export function ScrollMotionLabSection() {
               <article
                 key={`${scene.title}-${index}`}
                 data-slide
-                className="relative flex flex-[0_0_calc(100%-2rem)] flex-col justify-end overflow-hidden rounded-4xl border-2 border-white/20 bg-linear-to-br from-black/40 via-black/60 to-black/80 p-8 shadow-[0_30px_80px_rgba(0,0,0,0.5)] aspect-[1200/380]"
+                className="relative flex flex-[0_0_100%] sm:flex-[0_0_calc(100%-2rem)] flex-col sm:justify-end overflow-hidden rounded-none sm:rounded-4xl border-0 sm:border-2 border-white/20 bg-transparent sm:bg-linear-to-br sm:from-black/40 sm:via-black/60 sm:to-black/80 p-0 sm:p-8 shadow-none sm:shadow-[0_30px_80px_rgba(0,0,0,0.5)] sm:aspect-[16/9] lg:aspect-[1200/380]"
               >
-                <Image
-                  src={scene.image}
-                  alt={scene.title}
-                  fill
-                  className="absolute inset-0 h-full w-full object-cover transition-all duration-1000 ease-out"
-                  sizes="100vw"
-                  priority={index < 2}
-                />
-                <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent" />
-                <div className="absolute inset-0 opacity-0 bg-linear-to-br from-sky-500/20 via-transparent to-purple-500/20 transition-opacity duration-700 group-hover:opacity-100" />
+                <div className="relative w-full aspect-[4/3] sm:absolute sm:inset-0 sm:h-full sm:aspect-auto">
+                  <Image
+                    src={scene.image}
+                    alt={scene.title}
+                    fill
+                    className="object-cover transition-all duration-1000 ease-out"
+                    sizes="(max-width: 768px) 100vw, 80vw"
+                    priority={index < 2}
+                    unoptimized
+                  />
+                </div>
+                
+                <div className="hidden sm:block absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent" />
+                <div className="hidden sm:block absolute inset-0 opacity-0 bg-linear-to-br from-sky-500/20 via-transparent to-purple-500/20 transition-opacity duration-700 group-hover:opacity-100" />
 
-                <div className="relative space-y-4">
-                  <p className="text-[0.7rem] font-semibold uppercase tracking-[0.6em] text-slate-500">
+                <div className="relative p-6 sm:p-0 bg-[#010b1e] sm:bg-transparent space-y-2 sm:space-y-4">
+                  <p className="text-[0.6rem] sm:text-[0.7rem] font-semibold uppercase tracking-[0.6em] text-slate-500">
                     {`Valeur ${index + 1}`}
                   </p>
-                  <h3 className="text-sm font-bold uppercase tracking-[0.5em] text-white/80">
+                  <h3 className="text-xs sm:text-sm font-bold uppercase tracking-[0.3em] sm:tracking-[0.5em] text-white/80 line-clamp-2 sm:line-clamp-none">
                     {scene.title}
                   </h3>
-                  <span className="inline-flex items-center gap-3 text-[0.7rem] font-medium uppercase text-slate-400">
+                  <span className="inline-flex items-center gap-3 text-[0.6rem] sm:text-[0.7rem] font-medium uppercase text-slate-400">
                     <span className="relative h-2 w-2 rounded-full bg-sky-400 shadow-[0_0_25px_rgba(56,189,248,0.9)]">
                       <span className="absolute inset-0 rounded-full bg-sky-300 animate-ping opacity-75" />
                     </span>
                     {scene.badge}
                   </span>
-                  <p className="text-base leading-relaxed text-white/85">{scene.detail}</p>
+                  <p className="text-sm sm:text-base leading-relaxed text-white/85 line-clamp-3 sm:line-clamp-none">{scene.detail}</p>
                 </div>
               </article>
             ))}
           </div>
         </div>
 
-        <div className="mt-6 flex items-center justify-center gap-2">
-          {horizontalScenes.map((scene, index) => (
-            <button
-              key={scene.title}
-              aria-label={`Afficher ${scene.title}`}
-              className={`h-2 w-8 rounded-full transition-all ${
-                slideCount > 0 && currentIndex % slideCount === index ? 'bg-sky-400 w-10' : 'bg-white/20'
-              }`}
-              onClick={() => {
-                setIsInstant(false);
-                setCurrentIndex(index);
-              }}
-            />
-          ))}
+        <div className="mt-6 flex items-center justify-center gap-6">
+          <button
+            onClick={handlePrev}
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition-all hover:bg-white/10 hover:scale-110 active:scale-95"
+            aria-label="Précédent"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
+
+          <div className="flex items-center gap-2">
+            {horizontalScenes.map((scene, index) => (
+              <button
+                key={scene.title}
+                aria-label={`Afficher ${scene.title}`}
+                className={`h-2 w-8 rounded-full transition-all ${
+                  slideCount > 0 && (currentIndex - 1 + slideCount) % slideCount === index ? 'bg-sky-400 w-10' : 'bg-white/20'
+                }`}
+                onClick={() => {
+                  setIsInstant(false);
+                  setCurrentIndex(index + 1); // +1 because of the start clone
+                }}
+              />
+            ))}
+          </div>
+
+          <button
+            onClick={handleNext}
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition-all hover:bg-white/10 hover:scale-110 active:scale-95"
+            aria-label="Suivant"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
         </div>
       </div>
     </section>

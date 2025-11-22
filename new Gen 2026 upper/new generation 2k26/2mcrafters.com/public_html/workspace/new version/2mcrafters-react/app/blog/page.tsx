@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { blogPosts, faqs } from "@/lib/data";
 import { FadeInOnScroll } from "@/components/motion/FadeInOnScroll";
 import { NewsletterSection } from "@/components/sections/NewsletterSection";
+import { BlogHeroSlider } from "@/components/sections/BlogHeroSlider";
 
 export const metadata: Metadata = {
   title: "Blog & FAQ | 2MCRAFTERS",
@@ -11,30 +12,56 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
   return (
-    <div className="space-y-16">
-      <section className="bg-white py-24 text-zinc-900">
-        <div className="mx-auto max-w-4xl space-y-6 px-6 text-center">
-          <FadeInOnScroll className="space-y-4">
-            <p className="tagline text-slate-500">Blog & FAQ</p>
-            <h1 className="text-4xl font-semibold">Le blog 2MCRAFTERS.</h1>
-            <p className="text-lg text-slate-600">
-              Nous partageons des articles autour du web, du design, de la digitalisation et des bonnes pratiques pour faire
-              grandir votre présence digitale.
-            </p>
-          </FadeInOnScroll>
+    <div className="space-y-24 pb-24">
+      {/* Hero Section with Slider */}
+      <section className="px-4 pt-32 md:px-8">
+        <div className="mx-auto max-w-[1600px]">
+          <BlogHeroSlider />
         </div>
       </section>
 
-  <section className="bg-linear-to-b from-[#00315f] to-[#001428] py-24 text-white">
-        <div className="mx-auto max-w-6xl space-y-12 px-6">
-          <div className="grid gap-6 md:grid-cols-2">
+      {/* Blog Grid Section */}
+      <section className="px-4 md:px-8">
+        <div className="mx-auto max-w-7xl space-y-12">
+          <div className="mx-auto max-w-3xl text-center">
+            <FadeInOnScroll className="space-y-4">
+              <h2 className="text-3xl font-bold text-white md:text-4xl">L’expertise de notre équipe, partagée avec vous.</h2>
+              <p className="text-lg text-slate-400">
+                Nos articles décryptent les tendances du digital, du design, du développement et des systèmes métiers.
+                Chaque publication est pensée pour vous apporter des insights concrets, des bonnes pratiques et des stratégies applicables immédiatement.
+              </p>
+            </FadeInOnScroll>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {blogPosts.map((post, index) => (
-              <FadeInOnScroll key={post.title} delay={index * 80} className="rounded-3xl border border-white/10 bg-white/10 p-6">
-                <p className="text-xs uppercase tracking-[0.4em] text-slate-400">Article</p>
-                <h2 className="mt-3 text-2xl font-semibold">{post.title}</h2>
-                <p className="mt-2 text-sm text-slate-200">{post.summary}</p>
-                <div className="mt-4 rounded-2xl border border-white/20 bg-white/10 px-4 py-2 text-xs uppercase tracking-[0.3em] text-white/80">
-                  À lire bientôt
+              <FadeInOnScroll 
+                key={post.title} 
+                delay={index * 100} 
+                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#00315f]/80 to-[#001428]/80 backdrop-blur-sm transition-all hover:border-blue-400/50 hover:shadow-lg hover:shadow-blue-900/20"
+              >
+                <div className="flex h-full flex-col p-6">
+                  <div className="mb-4 flex items-center justify-between">
+                    <span className="rounded-full bg-blue-500/20 px-3 py-1 text-xs font-medium text-blue-300">
+                      {post.category}
+                    </span>
+                    <span className="text-xs text-slate-400">{post.date}</span>
+                  </div>
+                  
+                  <h3 className="mb-3 text-xl font-bold text-white transition-colors group-hover:text-blue-400">
+                    {post.title}
+                  </h3>
+                  
+                  <p className="mb-6 flex-grow text-sm leading-relaxed text-slate-300">
+                    {post.summary}
+                  </p>
+                  
+                  <div className="mt-auto flex items-center pt-4 text-sm font-medium text-blue-400">
+                    Lire l'article
+                    <svg className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </div>
                 </div>
               </FadeInOnScroll>
             ))}
@@ -42,21 +69,36 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <section className="bg-white py-24 text-zinc-900">
-        <div className="mx-auto max-w-4xl space-y-8 px-6">
-          <FadeInOnScroll className="space-y-3 text-center">
-            <p className="tagline text-slate-500">FAQ</p>
-            <h2 className="text-3xl font-semibold">Questions fréquentes.</h2>
-            <p className="text-lg text-slate-600">Les réponses aux questions que l’on nous pose le plus souvent.</p>
+      {/* FAQ Section */}
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-4xl px-4 md:px-8">
+          <FadeInOnScroll className="mb-16 text-center space-y-4">
+            <span className="text-sm font-semibold uppercase tracking-wider text-[#00315f]">Support & Aide</span>
+            <h2 className="text-3xl font-bold text-[#001428] md:text-4xl">Questions Fréquentes</h2>
+            <p className="mx-auto max-w-2xl text-lg text-[#00315f]/80">
+              Tout ce que vous devez savoir sur notre processus de travail, nos services et notre accompagnement.
+            </p>
           </FadeInOnScroll>
+
           <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <details key={faq.question} className="rounded-2xl border border-black/5 bg-slate-50 p-4" open={index === 0}>
-                <summary className="cursor-pointer text-lg font-semibold text-zinc-900">
-                  {faq.question}
-                </summary>
-                <p className="mt-2 text-sm text-slate-600">{faq.answer}</p>
-              </details>
+              <FadeInOnScroll key={index} delay={index * 50}>
+                <details className="group rounded-2xl border border-slate-200 bg-slate-50 transition-all hover:border-blue-200 open:border-blue-200 open:bg-white open:ring-1 open:ring-blue-200">
+                  <summary className="flex cursor-pointer items-center justify-between p-6 font-medium text-[#001428]">
+                    <span className="text-lg">{faq.question}</span>
+                    <span className="ml-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-[#00315f] shadow-sm transition-all group-hover:bg-blue-50 group-hover:text-[#001428] group-open:rotate-180 group-open:bg-blue-100 group-open:text-[#001428]">
+                      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </span>
+                  </summary>
+                  <div className="px-6 pb-6 pt-0">
+                    <p className="text-[#00315f]/80 leading-relaxed border-t border-slate-100 pt-4">
+                      {faq.answer}
+                    </p>
+                  </div>
+                </details>
+              </FadeInOnScroll>
             ))}
           </div>
         </div>

@@ -14,7 +14,7 @@ const iconMap: Record<string, LucideIcon> = {
 
 export function ServicesSection() {
   return (
-    <section id="services" className="relative overflow-hidden py-24 text-white">
+    <section id="services" className="relative overflow-hidden py-14 text-white">
       <div className="pointer-events-none absolute inset-0 opacity-30">
         <div className="absolute inset-y-0 left-1/2 h-full w-220 -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(124,158,237,0.2),transparent_60%)] blur-3xl" />
         <div className="absolute -bottom-32 right-12 h-72 w-72 rounded-full bg-[radial-gradient(circle,rgba(34,211,238,0.25),transparent_60%)] blur-3xl" />
@@ -23,10 +23,9 @@ export function ServicesSection() {
       <div className="relative mx-auto max-w-6xl px-6">
         <FadeInOnScroll className="space-y-4 text-center">
           <p className="tagline text-slate-300">Ce que nous faisons</p>
-          <h2 className="text-3xl font-semibold sm:text-4xl">Un studio, plusieurs expertises digitales.</h2>
+          <h2 className="text-3xl font-semibold sm:text-4xl">L’innovation digitale, réunie dans une seule équipe.</h2>
           <p className="text-lg text-slate-200">
-            2MCRAFTERS réunit développement web, design, vidéo, contenu et systèmes métiers dans une seule équipe
-            pour livrer des solutions cohérentes, esthétiques et efficaces.
+            Développement web, design, vidéo, systèmes métiers… Crafters rassemble toutes les expertises pour transformer vos idées en solutions efficaces et remarquables.
           </p>
         </FadeInOnScroll>
 

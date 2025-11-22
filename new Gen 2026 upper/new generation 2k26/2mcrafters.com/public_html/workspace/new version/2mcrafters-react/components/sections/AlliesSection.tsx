@@ -1,43 +1,52 @@
-import { clients } from "@/lib/data";
-import { FadeInOnScroll } from "@/components/motion/FadeInOnScroll";
+import Image from 'next/image';
+import { FadeInOnScroll } from '@/components/motion/FadeInOnScroll';
+
+const refImages = [
+  '01ref.png',
+  '02ref.png',
+  '03ref.png',
+  '04ref.png',
+  '05ref.png',
+  '06ref.png',
+  '07ref.png',
+  '08ref.png',
+  '09ref.png',
+  '10ref.png',
+  '11ref.png',
+  '12ref.png',
+  '13ref.png',
+];
 
 export function AlliesSection() {
-  const rows = [clients, [...clients].reverse()];
+  // Quadruple the list to ensure seamless looping on all screen sizes
+  const infiniteImages = [...refImages, ...refImages, ...refImages, ...refImages];
 
   return (
-    <section className="relative py-8 text-white">
-      <div className="mx-auto max-w-6xl space-y-8 px-6 text-center">
-        <FadeInOnScroll className="space-y-4">
+    <section className="relative py-12 text-white">
+      <div className="mx-auto max-w-7xl px-6 text-center">
+        <FadeInOnScroll className="mb-10">
           <p className="tagline text-slate-400">Alliances</p>
-          <h2 className="text-2xl font-semibold sm:text-3xl">
-            Scale-ups, studios et fonds nous confient leurs ambitions.
-          </h2>
-          <p className="text-slate-400">
-            Workshops immersifs, squads dédiées et timezones compatibles pour livrer sans friction.
+          <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">Des partenaires qui nous font confiance</h2>
+          <p className="mx-auto mt-4 max-w-3xl text-lg text-slate-400">
+            Nous collaborons avec des entreprises visionnaires pour créer des solutions digitales fiables, performantes et durables.
+            Chaque logo représente une alliance forte bâtie sur l’innovation, l’expertise et l’excellence.
           </p>
         </FadeInOnScroll>
 
-        <div className="space-y-4 overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8">
-          {rows.map((row, rowIndex) => (
-            <div
-              key={rowIndex}
-              className={rowIndex === 0 ? 'animate-marquee' : 'animate-marquee-alt'}
-            >
-              <div className="flex items-center gap-8 whitespace-nowrap">
-                {row.concat(row).map((client, index) => (
-                  <div
-                    key={`${client.name}-${index}`}
-                    className="flex min-w-48 flex-col items-center rounded-2xl border border-white/10 bg-white/10 px-6 py-4"
-                  >
-                    <span className="text-xl font-semibold tracking-wide">{client.name}</span>
-                    <span className="text-xs uppercase tracking-[0.3em] text-slate-400">
-                      {client.focus}
-                    </span>
-                  </div>
-                ))}
+        <div className="relative w-full overflow-hidden rounded-3xl border border-white/10 bg-white/5 py-12">
+          <div 
+            className="flex w-max animate-marquee items-center whitespace-nowrap"
+            style={{ animationDuration: '40s' }}
+          >
+            {infiniteImages.map((img, index) => (
+              <div
+                key={`${img}-${index}`}
+                className="relative mr-16 h-16 w-40 shrink-0 opacity-60 grayscale transition-all hover:opacity-100 hover:grayscale-0"
+              >
+                <Image src={`/images/ref/${img}`} alt="Partner" fill className="object-contain" />
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
