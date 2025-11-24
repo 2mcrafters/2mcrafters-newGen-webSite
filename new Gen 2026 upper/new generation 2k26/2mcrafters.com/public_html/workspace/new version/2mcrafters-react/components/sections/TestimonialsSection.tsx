@@ -8,24 +8,27 @@ import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Sarah Martinez",
-    role: "CEO, TechFlow",
-    avatar: "/images/avatar1.jpg",
-    content: "L&rsquo;équipe 2MCRAFTERS a transformé notre vision en réalité. Leur expertise technique et leur approche créative ont dépassé toutes nos attentes.",
+    name: 'Sarah Martinez',
+    role: 'CEO, TechFlow',
+    avatar: '/images/pics/06.jpg',
+    content:
+      'L&rsquo;équipe CRAFTERS a transformé notre vision en réalité. Leur expertise technique et leur approche créative ont dépassé toutes nos attentes.',
     rating: 5,
   },
   {
-    name: "Marc Dubois",
-    role: "Directeur Marketing, InnovateCorp",
-    avatar: "/images/avatar2.jpg",
-    content: "Un accompagnement exceptionnel du début à la fin. Le résultat final est à la fois élégant, performant et parfaitement aligné avec notre stratégie.",
+    name: 'Marc Dubois',
+    role: 'Directeur Marketing, InnovateCorp',
+    avatar: '/images/pics/03.jpeg',
+    content:
+      'Un accompagnement exceptionnel du début à la fin. Le résultat final est à la fois élégant, performant et parfaitement aligné avec notre stratégie.',
     rating: 5,
   },
   {
-    name: "Amina Benali",
-    role: "Fondatrice, StartHub",
-    avatar: "/images/avatar3.jpg",
-    content: "Professionnalisme, réactivité et qualité irréprochable. Notre nouvelle plateforme a multiplié notre taux de conversion par 3 en seulement 2 mois.",
+    name: 'Amina Benali',
+    role: 'Fondatrice, StartHub',
+    avatar: '/images/pics/020.avif',
+    content:
+      'Professionnalisme, réactivité et qualité irréprochable. Notre nouvelle plateforme a multiplié notre taux de conversion par 3 en seulement 2 mois.',
     rating: 5,
   },
 ];

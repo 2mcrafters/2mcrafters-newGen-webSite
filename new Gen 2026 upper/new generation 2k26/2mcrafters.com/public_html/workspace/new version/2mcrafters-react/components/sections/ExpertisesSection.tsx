@@ -11,7 +11,7 @@ export function ExpertisesSection() {
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.85fr] lg:items-start">
           <FadeInOnScroll className="space-y-6">
             <p className="tagline text-slate-400">Pourquoi nous choisir ?</p>
-            <h2 className="text-3xl font-semibold leading-tight sm:text-4xl">Pourquoi travailler avec 2MCRAFTERS ?</h2>
+            <h2 className="text-3xl font-semibold leading-tight sm:text-4xl">Pourquoi travailler avec CRAFTERS ?</h2>
             <p className="text-lg text-slate-300">
               Approche 360°, culture produit, expertise technique et accompagnement humain : nous mixons tout ce qu’il
               faut pour transformer vos idées en expériences digitales performantes.
@@ -19,7 +19,7 @@ export function ExpertisesSection() {
             <div className="rounded-3xl border border-white/10 bg-linear-to-br from-white/10 via-white/5 to-transparent p-6 shadow-[0_35px_80px_rgba(0,0,0,0.35)]">
               <p className="text-sm leading-relaxed text-slate-200">
                 &laquo;&nbsp;Nous sommes ancrés à Tanger avec une vision internationale : nos clients profitent d’une proximité
-                réelle et d’une ambition globale.&nbsp;&raquo; – Squad 2MCRAFTERS
+                réelle et d’une ambition globale.&nbsp;&raquo; – Squad CRAFTERS
               </p>
               <div className="mt-4 flex flex-wrap gap-3 text-[0.65rem] uppercase tracking-[0.4em] text-slate-400">
                 <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-3 py-1">

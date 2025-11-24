@@ -32,15 +32,13 @@ export function FadeInOnScroll({ children, delay = 0, className, threshold = 0.2
     return () => observer.disconnect();
   }, [threshold]);
 
-  const delayClass = delay ? `delay-[${delay}ms]` : undefined;
-
   return (
     <div
       ref={ref}
+      style={{ transitionDelay: `${delay}ms` }}
       className={cn(
         'transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform',
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8',
-        delayClass,
         className,
       )}
     >

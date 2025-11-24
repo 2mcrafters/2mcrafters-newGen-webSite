@@ -53,7 +53,7 @@ export function HoverCard3D({
       }}
       className={cn("relative", styles.preserve3d, className)}
     >
-      <div className={styles.translateZ50}>
+      <div className={cn(styles.translateZ50, "h-full")}>
         {children}
       </div>
     </motion.div>

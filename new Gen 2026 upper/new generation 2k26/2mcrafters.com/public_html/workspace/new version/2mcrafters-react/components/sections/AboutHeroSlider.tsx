@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const slides = [
   { 
     src: "/images/pics/01.jpg", 
-    alt: "Notre Studio",
+    alt: "Notre Entreprise",
     title: "Créativité sans limites",
     subtitle: "Un espace où les idées prennent vie."
   },

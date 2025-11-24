@@ -33,24 +33,24 @@ export function ServicesSection() {
           {services.map((service, index) => (
             <VelocityCard
               key={service.title}
-              className="h-full rounded-3xl border border-white/10 bg-white p-6 shadow-xl shadow-black/20 backdrop-blur"
+              className="group h-full rounded-3xl border border-white/10 bg-white p-6 shadow-xl shadow-black/20 backdrop-blur transition-all duration-300 hover:bg-[#001428] hover:border-white/20"
               lift={8 + index}
               intensity={0.04 + index * 0.004}
             >
               <div className="flex items-center gap-3">
-                <div className="rounded-2xl bg-[#004484] p-3 text-white">
+                <div className="rounded-2xl bg-[#004484] p-3 text-white transition-colors group-hover:bg-cyan-500">
                   {(() => {
                     const Icon = iconMap[service.icon ?? "Code2"];
                     return <Icon className="h-6 w-6" strokeWidth={1.5} />;
                   })()}
                 </div>
-                <h3 className="text-xl font-semibold text-zinc-900">{service.title}</h3>
+                <h3 className="text-xl font-semibold text-zinc-900 transition-colors group-hover:text-white">{service.title}</h3>
               </div>
-              <p className="mt-4 text-sm text-zinc-600">{service.description}</p>
-              <ul className="mt-5 space-y-2 text-sm text-zinc-700">
+              <p className="mt-4 text-sm text-zinc-600 transition-colors group-hover:text-slate-300">{service.description}</p>
+              <ul className="mt-5 space-y-2 text-sm text-zinc-700 transition-colors group-hover:text-slate-300">
                 {service.highlights.map((point) => (
                   <li key={point} className="flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#004484]" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#004484] transition-colors group-hover:bg-cyan-400" />
                     {point}
                   </li>
                 ))}

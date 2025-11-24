@@ -1,7 +1,7 @@
 "use client";
 
 import { FadeInOnScroll } from "@/components/motion/FadeInOnScroll";
-import { Sparkles, Layers, Palette, Workflow, Radar, PanelsTopLeft } from "lucide-react";
+import { Sparkles, Layers, Palette, Workflow } from "lucide-react";
 
 const creativeStack = [
   {
@@ -50,7 +50,7 @@ export function CreativeStackSection() {
           </div>
         </FadeInOnScroll>
 
-        <div className="lg:basis-[60%]">
+        <FadeInOnScroll delay={0.2} className="lg:basis-[60%]">
           <div className="grid gap-5 rounded-4xl border border-white/5 bg-white/0 p-4 sm:grid-cols-2">
             {creativeStack.map((item) => (
               <div key={item.title} className="flex flex-col rounded-3xl border border-white/10 bg-white/5 p-5 text-left">
@@ -72,7 +72,7 @@ export function CreativeStackSection() {
               </div>
             ))}
           </div>
-        </div>
+        </FadeInOnScroll>
       </div>
     </section>
   );

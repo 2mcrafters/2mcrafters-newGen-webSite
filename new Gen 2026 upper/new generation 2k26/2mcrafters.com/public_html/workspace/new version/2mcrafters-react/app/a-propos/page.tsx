@@ -8,9 +8,9 @@ import { AboutHeroSlider } from "@/components/sections/AboutHeroSlider";
 import { ExpertiseTickerSection } from "@/components/sections/ExpertiseTickerSection";
 
 export const metadata: Metadata = {
-  title: "À propos de 2MCRAFTERS | Studio digital & créatif",
+  title: "À propos de CRAFTERS | Entreprise digitale & créative",
   description:
-    "Studio digital-tech basé à Tanger réunissant développeurs, designers, vidéastes et stratèges pour accélérer la transformation digitale des entreprises.",
+    "Entreprise digital-tech basée à Tanger réunissant développeurs, designers, vidéastes et stratèges pour accélérer la transformation digitale des entreprises.",
 };
 
 export default function AboutPage() {
@@ -134,19 +134,19 @@ export default function AboutPage() {
               <FadeInOnScroll key={index} delay={index * 100} className="relative aspect-4/5 overflow-hidden rounded-3xl group border border-white/10 bg-white/5">
                 <Image 
                   src={src} 
-                  alt={`Life at 2MCRAFTERS ${index + 1}`} 
+                  alt={`Life at CRAFTERS ${index + 1}`} 
                   fill 
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center gap-6">
                   <div className="flex gap-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
-                    <a href="#" className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-slate-900 transition-transform hover:scale-110 hover:bg-[#1877F2] hover:text-white" aria-label="Facebook">
+                    <a href="https://www.facebook.com/people/2mcrafters/61578604900086/" className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-slate-900 transition-transform hover:scale-110 hover:bg-[#1877F2] hover:text-white" aria-label="Facebook">
                       <Facebook size={20} />
                     </a>
-                    <a href="#" className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-slate-900 transition-transform hover:scale-110 hover:bg-[#E4405F] hover:text-white" aria-label="Instagram">
+                    <a href="https://www.instagram.com/2m.crafters/" className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-slate-900 transition-transform hover:scale-110 hover:bg-[#E4405F] hover:text-white" aria-label="Instagram">
                       <Instagram size={20} />
                     </a>
-                    <a href="#" className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-slate-900 transition-transform hover:scale-110 hover:bg-[#0A66C2] hover:text-white" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/company/108333019/admin/dashboard/" className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-slate-900 transition-transform hover:scale-110 hover:bg-[#0A66C2] hover:text-white" aria-label="LinkedIn">
                       <Linkedin size={20} />
                     </a>
                   </div>

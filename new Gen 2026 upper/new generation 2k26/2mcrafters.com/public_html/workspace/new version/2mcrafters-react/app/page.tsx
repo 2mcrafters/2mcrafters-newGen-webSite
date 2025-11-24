@@ -1,4 +1,3 @@
-import { ContactSection } from "@/components/sections/ContactSection";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { AlliesSection } from "@/components/sections/AlliesSection";
@@ -22,7 +21,6 @@ export default function Home() {
       <CaseStudiesSection />
       <ScrollMotionLabSection />
       <NewsletterSection />
-      <ContactSection />
     </>
   );
 }

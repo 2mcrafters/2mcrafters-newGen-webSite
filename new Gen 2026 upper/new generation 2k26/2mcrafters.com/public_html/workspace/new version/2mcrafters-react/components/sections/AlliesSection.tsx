@@ -33,7 +33,7 @@ export function AlliesSection() {
           </p>
         </FadeInOnScroll>
 
-        <div className="relative w-full overflow-hidden rounded-3xl border border-white/10 bg-white/5 py-12">
+        <FadeInOnScroll delay={0.2} className="relative w-full overflow-hidden rounded-3xl border border-white/10 bg-white/5 py-12">
           <div 
             className="flex w-max animate-marquee items-center whitespace-nowrap"
             style={{ animationDuration: '40s' }}
@@ -43,11 +43,17 @@ export function AlliesSection() {
                 key={`${img}-${index}`}
                 className="relative mr-16 h-16 w-40 shrink-0 opacity-60 grayscale transition-all hover:opacity-100 hover:grayscale-0"
               >
-                <Image src={`/images/ref/${img}`} alt="Partner" fill className="object-contain" />
+                <Image
+                  src={`/images/ref/${img}`}
+                  alt="Partner"
+                  fill
+                  sizes="60px"
+                  className="object-contain"
+                />
               </div>
             ))}
           </div>
-        </div>
+        </FadeInOnScroll>
       </div>
     </section>
   );

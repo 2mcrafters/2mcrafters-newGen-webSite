@@ -1,11 +1,13 @@
 import { contactItems } from "@/lib/data";
 import { FadeInOnScroll } from "@/components/motion/FadeInOnScroll";
-import { PhoneCall, Mail, MapPin, type LucideIcon } from "lucide-react";
+import { PhoneCall, Mail, MapPin, MessageCircle, Linkedin, type LucideIcon } from "lucide-react";
 
 const contactIconMap: Record<string, LucideIcon> = {
   PhoneCall,
   Mail,
   MapPin,
+  MessageCircle,
+  Linkedin,
 };
 
 export function ContactSection() {
@@ -31,7 +33,7 @@ export function ContactSection() {
             </a>
           </div>
         </FadeInOnScroll>
-        <div className="grid gap-6 sm:grid-cols-3">
+        <FadeInOnScroll delay={0.2} className="grid gap-6 sm:grid-cols-3">
           {contactItems.map((item) => (
             <a
               key={item.label}
@@ -50,7 +52,7 @@ export function ContactSection() {
               </div>
             </a>
           ))}
-        </div>
+        </FadeInOnScroll>
       </div>
     </section>
   );

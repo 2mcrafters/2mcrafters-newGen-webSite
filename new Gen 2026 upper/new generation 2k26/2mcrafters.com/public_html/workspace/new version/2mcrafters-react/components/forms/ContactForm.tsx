@@ -11,7 +11,6 @@ export function ContactForm() {
     email: "",
     phone: "",
     projectType: projectTypes[0],
-    budget: "",
     message: "",
   });
 
@@ -22,6 +21,19 @@ export function ContactForm() {
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    
+    const subject = `Nouveau projet : ${formData.projectType} - ${formData.name}`;
+    const body = `Nom: ${formData.name}
+Entreprise: ${formData.company}
+Email: ${formData.email}
+Téléphone: ${formData.phone}
+Type de projet: ${formData.projectType}
+
+Message:
+${formData.message}`;
+
+    window.location.href = `mailto:2m.crafters@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
     setSubmitted(true);
   };
 
@@ -70,7 +82,7 @@ export function ContactForm() {
             className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-500 focus:border-white/40 focus:outline-none"
           />
         </label>
-        <label className="space-y-2 text-sm text-slate-300">
+        <label className="space-y-2 text-sm text-slate-300 md:col-span-2">
           Type de projet
           <select
             name="projectType"
@@ -84,17 +96,6 @@ export function ContactForm() {
               </option>
             ))}
           </select>
-        </label>
-        <label className="space-y-2 text-sm text-slate-300">
-          Budget estimé
-          <input
-            type="text"
-            name="budget"
-            value={formData.budget}
-            onChange={handleChange}
-            placeholder="Ex : 80 000 MAD"
-            className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-500 focus:border-white/40 focus:outline-none"
-          />
         </label>
       </div>
       <label className="space-y-2 text-sm text-slate-300">

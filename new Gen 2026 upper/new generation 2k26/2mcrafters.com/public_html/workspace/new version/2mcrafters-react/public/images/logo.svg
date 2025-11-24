@@ -5,7 +5,7 @@
   
   <!-- Text -->
   <text x="55" y="32" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#002b44">Crafters</text>
-  <text x="55" y="48" font-family="Arial, sans-serif" font-size="10" fill="#135ca9">Digital Studio</text>
+  <text x="55" y="48" font-family="Arial, sans-serif" font-size="10" fill="#135ca9">Entreprise Digitale</text>
   
   <!-- Gradient Definition -->
   <defs>

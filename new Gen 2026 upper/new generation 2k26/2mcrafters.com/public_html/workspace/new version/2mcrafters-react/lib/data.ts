@@ -98,9 +98,10 @@ export const processSteps = [
 ];
 
 export const contactItems = [
-  { label: "Téléphone", value: "+212 600-000-000", href: "tel:+212600000000", icon: "PhoneCall" },
-  { label: "Email", value: "bonjour@2mcrafters.com", href: "mailto:bonjour@2mcrafters.com", icon: "Mail" },
-  { label: "Studio", value: "Tanger & Remote", href: "https://maps.app.goo.gl/", icon: "MapPin" },
+  { label: "Téléphone", value: "+212 774-997108", href: "tel:+212774997108", icon: "PhoneCall" },
+  { label: "WhatsApp", value: "+212 688-284783", href: "https://wa.me/212688284783", icon: "MessageCircle" },
+  { label: "Email", value: "2m.crafters@gmail.com", href: "mailto:2m.crafters@gmail.com", icon: "Mail" },
+  { label: "LinkedIn", value: "2m.crafters", href: "https://www.linkedin.com/company/108333019/admin/dashboard/", icon: "Linkedin" },
 ];
 
 export const clients = [
@@ -244,9 +245,72 @@ export const detailedServices = [
       "Sauvegardes & sécurité",
     ],
   },
+  {
+    id: "strategy",
+    title: "Stratégie Digitale & Consulting",
+    intro:
+      "Accompagnement stratégique pour définir votre vision, vos objectifs et la feuille de route de votre transformation digitale.",
+    points: [
+      "Audit de maturité digitale",
+      "Définition de roadmap produit",
+      "Choix technologiques & architecture",
+      "Optimisation des processus",
+      "Formation & acculturation",
+    ],
+  },
 ];
 
-export const portfolioProjects = caseStudies;
+export const portfolioProjects = [
+  ...caseStudies,
+  {
+    title: 'Plateforme E-learning',
+    category: 'SaaS • Éducation • Vidéo',
+    description:
+      'Plateforme de formation en ligne avec suivi de progression, quiz interactifs et certification automatisée.',
+    image: '/images/pics/02.avif',
+    stats: ['+5k utilisateurs', 'UX Gamifiée', 'Streaming HD'],
+  },
+  {
+    title: 'Application Fintech',
+    category: 'Mobile • Finance • Sécurité',
+    description:
+      'Application mobile de gestion financière personnelle avec agrégation bancaire et analyse de dépenses par IA.',
+    image: '/images/pics/020.avif',
+    stats: ['Sécurité bancaire', 'Temps réel', 'IA prédictive'],
+  },
+  {
+    title: 'Marketplace B2B',
+    category: 'Web • Commerce • API',
+    description:
+      'Place de marché mettant en relation fournisseurs et distributeurs avec gestion des stocks et facturation intégrée.',
+    image: '/images/pics/03.jpeg',
+    stats: ['Flux automatisés', 'Scalabilité', 'Dashboard admin'],
+  },
+  {
+    title: 'Refonte Site Corporate',
+    category: 'Web • Branding • SEO',
+    description:
+      'Refonte complète du site institutionnel d’un grand groupe industriel pour moderniser son image et attirer les talents.',
+    image: '/images/pics/05.webp',
+    stats: ['+40% trafic', 'Marque employeur', 'Accessibilité'],
+  },
+  {
+    title: 'Campagne Social Media',
+    category: 'Marketing • Contenu • Viralité',
+    description:
+      'Stratégie et production de contenus pour une campagne de lancement produit sur Instagram et TikTok.',
+    image: '/images/pics/011.jpg',
+    stats: ['+1M vues', 'Engagement fort', 'ROI positif'],
+  },
+  {
+    title: 'Dashboard Analytics',
+    category: 'SaaS • Data • UI/UX',
+    description:
+      'Interface de visualisation de données complexes pour aider les décideurs à piloter leur activité en temps réel.',
+    image: '/images/pics/02.avif',
+    stats: ['Data viz', 'Temps réel', 'Personnalisable'],
+  },
+];
 
 export const aboutValues = [
   {

@@ -53,7 +53,7 @@ export function HeroSection() {
       <div className="pointer-events-none absolute inset-0">
         <Image
           src={heroImageUrl}
-          alt="2M Crafters studio"
+          alt="Crafters entreprise"
           fill
           priority
           sizes="100vw"
@@ -63,7 +63,7 @@ export function HeroSection() {
       </div>
       <div className="relative mx-auto flex max-w-6xl flex-col gap-12 px-6 md:flex-row md:items-center">
   <FadeInOnScroll className="flex-1 space-y-5 pb-[50px] sm:-mt-6 md:-mt-10 lg:-mt-14">
-          <p className="tagline text-slate-400">Studio digital & créatif · Tanger</p>
+          <p className="tagline text-slate-400">Entreprise digitale & créative · Tanger</p>
           <h1 className="text-4xl font-semibold leading-tight sm:text-5xl">
             <span className="block" aria-hidden="true">
               Crafters
@@ -75,16 +75,16 @@ export function HeroSection() {
           </p>
           <div className="flex flex-wrap gap-4 sm:flex-nowrap">
             <a
-              href="#projects"
+              href="/services"
               className="rounded-full bg-white px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-black"
             >
-              Nos projets
+              Nos services
             </a>
             <a
-              href="#services"
+              href="/portfolio"
               className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white"
             >
-              En savoir plus
+              Nos projets
             </a>
           </div>
           <div className="flex flex-nowrap gap-3 overflow-x-auto pt-1">
@@ -99,7 +99,7 @@ export function HeroSection() {
             ))}
           </div>
         </FadeInOnScroll>
-  <div className="flex-1 md:-mt-12 lg:-mt-16">
+  <FadeInOnScroll delay={0.2} className="flex-1 md:-mt-12 lg:-mt-16">
           <div className="group relative rounded-4xl border border-white/10 bg-slate-900/40 p-8 shadow-[0_35px_120px_rgba(18,24,58,0.75)]">
             <div className="space-y-5">
               <div className="flex items-start justify-between gap-4">
@@ -153,7 +153,7 @@ export function HeroSection() {
             </div>
             <div className="pointer-events-none absolute inset-0 rounded-4xl border border-white/5 opacity-0 transition-opacity duration-500 group-hover:opacity-80" />
           </div>
-        </div>
+        </FadeInOnScroll>
       </div>
     </section>
   );

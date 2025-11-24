@@ -29,6 +29,7 @@
 
 html,
 body {
+  overflow-x: hidden;
   background-color: var(--background-end);
   background-image:
     radial-gradient(circle at var(--gradient-x) var(--gradient-y), rgba(0, 84, 148, 0.3), transparent 55%),

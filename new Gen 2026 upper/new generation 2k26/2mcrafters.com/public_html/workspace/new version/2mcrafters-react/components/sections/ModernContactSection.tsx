@@ -11,8 +11,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "contact@2mcrafters.com",
-    href: "mailto:contact@2mcrafters.com",
+    value: "2m.crafters@gmail.com",
+    href: "mailto:2m.crafters@gmail.com",
   },
   {
     icon: Phone,
