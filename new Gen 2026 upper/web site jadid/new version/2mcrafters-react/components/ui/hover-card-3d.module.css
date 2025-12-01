@@ -1,0 +1,8 @@
+.preserve3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.translateZ50 {
+  transform: translateZ(50px);
+}

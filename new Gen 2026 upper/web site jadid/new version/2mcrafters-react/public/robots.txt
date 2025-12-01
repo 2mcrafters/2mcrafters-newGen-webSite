@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Host: https://2mcrafters.com
+Sitemap: https://2mcrafters.com/sitemap.xml
