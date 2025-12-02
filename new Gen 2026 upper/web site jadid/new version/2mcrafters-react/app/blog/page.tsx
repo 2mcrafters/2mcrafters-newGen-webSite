@@ -93,7 +93,7 @@ export default async function BlogPage() {
       <section className="px-4 md:px-8">
         <div className="mx-auto max-w-5xl space-y-10">
           <FadeInOnScroll className="space-y-4 text-center">
-            <span className="text-sm font-semibold uppercase tracking-wider text-[#00315f]">
+            <span className="text-sm font-semibold uppercase tracking-wider text-[#ffffff]">
               L’expertise de notre équipe, partagée avec vous.
             </span>
             <p className="text-3xl font-bold text-white md:text-4xl">

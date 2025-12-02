@@ -1,0 +1,12 @@
+<svg width="220" height="80" viewBox="0 0 220 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-rh" x1="0" y1="0" x2="220" y2="80">
+      <stop offset="0%" stop-color="#030712" />
+      <stop offset="100%" stop-color="#22d3ee" />
+    </linearGradient>
+  </defs>
+  <rect width="220" height="80" rx="20" fill="url(#bg-rh)" />
+  <text x="110" y="45" fill="#0f172a" font-family="Inter, system-ui, sans-serif" font-size="26" font-weight="700" text-anchor="middle" dominant-baseline="middle">
+    Rhino
+  </text>
+</svg>

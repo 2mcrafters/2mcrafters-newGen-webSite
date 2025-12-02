@@ -52,7 +52,7 @@ export default function ExpertiseTickerSection01() {
     })),
   ];
 
-  const infiniteFiles = Array(4).fill(logoPool).flat();
+  const infiniteFiles = [...logoPool, ...logoPool];
 
   return (
     <section

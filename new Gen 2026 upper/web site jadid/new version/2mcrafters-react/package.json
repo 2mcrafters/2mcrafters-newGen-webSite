@@ -30,26 +30,28 @@
     "lenis": "^1.1.15",
     "lucide-react": "^0.554.0",
     "next": "16.0.3",
+    "nodemailer": "^6.9.4",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "react-wrap-balancer": "^1.1.1",
-    "tailwind-merge": "^3.4.0",
-    "nodemailer": "^6.9.4"
+    "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
+    "@types/nodemailer": "^7.0.4",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "baseline-browser-mapping": "^2.8.32",
+    "cross-env": "^7.0.3",
     "eslint": "^9",
     "eslint-config-next": "16.0.3",
     "eslint-config-prettier": "^9.1.0",
     "png-to-ico": "^3.0.1",
     "prettier": "^3.3.3",
+    "rimraf": "^5.0.0",
     "sharp": "^0.34.5",
     "tailwindcss": "^4",
-    "cross-env": "^7.0.3",
-    "typescript": "^5",
-    "rimraf": "^5.0.0"
+    "typescript": "^5"
   }
 }

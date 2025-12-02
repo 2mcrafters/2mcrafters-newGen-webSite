@@ -1,4 +1,12 @@
-<svg width="120" height="60" viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="120" height="60" rx="12" fill="#1f1b1b"/>
-  <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="Inter, sans-serif" font-size="30" font-weight="700" fill="#e50914">N</text>
+<svg width="220" height="80" viewBox="0 0 220 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-netflix" x1="0" y1="0" x2="220" y2="80">
+      <stop offset="0%" stop-color="#0f0f0f" />
+      <stop offset="100%" stop-color="#ef4444" />
+    </linearGradient>
+  </defs>
+  <rect width="220" height="80" rx="20" fill="url(#bg-netflix)" />
+  <text x="110" y="45" fill="#fef2f2" font-family="Inter, system-ui, sans-serif" font-size="26" font-weight="700" text-anchor="middle" dominant-baseline="middle">
+    Netflix
+  </text>
 </svg>

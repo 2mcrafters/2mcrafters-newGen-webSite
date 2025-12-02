@@ -1,0 +1,12 @@
+<svg width="200" height="80" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-ai" x1="0" y1="0" x2="200" y2="80">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#fb923c" />
+    </linearGradient>
+  </defs>
+  <rect width="200" height="80" rx="18" fill="url(#bg-ai)" />
+  <text x="100" y="44" fill="#fdf2f8" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="700" text-anchor="middle" dominant-baseline="middle">
+    Illustrator
+  </text>
+</svg>

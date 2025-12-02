@@ -1,8 +1,12 @@
-<svg width="120" height="60" viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="120" height="60" rx="12" fill="#0f172a"/>
-  <rect x="20" y="13" width="22" height="22" fill="#f97316"/>
-  <rect x="48" y="13" width="22" height="22" fill="#22d3ee"/>
-  <rect x="20" y="43" width="22" height="22" fill="#14b8a6"/>
-  <rect x="48" y="43" width="22" height="22" fill="#facc15"/>
-  <text x="87" y="40" dominant-baseline="middle" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#fff">MSFT</text>
+<svg width="220" height="80" viewBox="0 0 220 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-microsoft" x1="0" y1="0" x2="220" y2="80">
+      <stop offset="0%" stop-color="#030712" />
+      <stop offset="100%" stop-color="#14b8a6" />
+    </linearGradient>
+  </defs>
+  <rect width="220" height="80" rx="20" fill="url(#bg-microsoft)" />
+  <text x="110" y="45" fill="#f8fafc" font-family="Inter, system-ui, sans-serif" font-size="26" font-weight="700" text-anchor="middle" dominant-baseline="middle">
+    Microsoft
+  </text>
 </svg>

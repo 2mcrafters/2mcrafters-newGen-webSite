@@ -1,12 +1,12 @@
 <svg width="220" height="80" viewBox="0 0 220 80" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg-notion" x1="0" y1="0" x2="220" y2="80">
+    <linearGradient id="bg-php" x1="0" y1="0" x2="220" y2="80">
       <stop offset="0%" stop-color="#030712" />
-      <stop offset="100%" stop-color="#c084fc" />
+      <stop offset="100%" stop-color="#8b5cf6" />
     </linearGradient>
   </defs>
-  <rect width="220" height="80" rx="20" fill="url(#bg-notion)" />
+  <rect width="220" height="80" rx="20" fill="url(#bg-php)" />
   <text x="110" y="45" fill="#f8fafc" font-family="Inter, system-ui, sans-serif" font-size="26" font-weight="700" text-anchor="middle" dominant-baseline="middle">
-    Notion
+    PHP
   </text>
 </svg>
